@@ -20,7 +20,7 @@ btn.setOnLongClickListener(new View.OnLongClickListener() {
                 }
 });
 
-Another way
+Another way:
 
 button.setOnClickListener(onClick);
 //End of onCreate
