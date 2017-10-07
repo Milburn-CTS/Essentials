@@ -1,0 +1,156 @@
+Press 'Ctrl + Space' to show default proposal
+
+New Activity:
+Right click on layout -> New -> Other (Ctrl+N)
+In New go to Android -> New Activity -> Next. Fill in rest 
+
+Button:
+Button btn = (Button)findViewById(R.id.button1);
+btn.setOnClickListener(new View.OnClickListener(){
+public void onClick(View v){
+
+	}
+});
+
+btn.setOnLongClickListener(new View.OnLongClickListener() {
+                public boolean onLongClick(View v) {
+                    Toast.makeText(DeviceEventDetailsActivity.this, "Button Long...", Toast.LENGTH_LONG).show();
+
+                    return true;
+                }
+});
+
+Another way
+
+button.setOnClickListener(onClick);
+//End of onCreate
+
+public OnClickListener onClick= new OnClickListener() {
+
+    @Override
+    public void onClick(View v) {
+
+        // Do something in response to button click
+    }
+};
+
+OR
+
+edit_a_member = (Button) findViewById(R.id.edit_member);
+delete_a_member = (Button) findViewById(R.id.delete_member);
+
+    edit_a_member.setOnClickListener(handleClick);
+    delete_a_member.setOnClickListener(handleClick);
+
+private View.OnClickListener handleClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()) {
+                case R.id.edit_member:
+                    member_selected = EDIT_MEMBER_SELECTED;
+                    callDialog();
+                    break;
+                case R.id.delete_member:
+                    callDeleteAlert();
+                    break;
+            }
+        }
+    };
+
+implements View.OnClickListener
+
+ //attaching onclicklistener to buttons
+        buttonStart.setOnClickListener(this);
+        buttonStop.setOnClickListener(this);
+
+@Override
+    public void onClick(View view) {
+        if (view == buttonStart) {
+            //starting service
+            startService(new Intent(this, MyService.class));
+        } else if (view == buttonStop) {
+            //stopping service
+            stopService(new Intent(this, MyService.class));
+        }
+    }
+
+Intent:
+Intent int1 = new Intent(getApplicationContext(),SecondActivity.class);  //OR MainActivity.this instead of getApplicationContext()
+startActivity(int1);
+finish();
+
+Transfer data:
+Intent int1 = new Intent(getApplicationContext(),SecondActivity.class);
+int1.putExtra("n",et.getText().toString());
+startActivity(int1);
+finish();
+
+//in the second activity
+TextView tv = (TextView)findViewById(R.id.textView1);
+Intent i = getIntent();
+String str = i.getStringExtra("n");  //For String
+tv.setText(str.toString());
+
+int n = i.getIntExtra("n", 0); //For Int where 0 is the default value
+
+Toast:
+//After Finish();
+Toast tst = Toast.makeText(getApplicationContext(), "message", Toast.LENGTH_SHORT);
+tst.show();
+
+OR Toast.makeText(getApplicationContext(),"message",Toast.LENGTH_SHORT).show();
+
+Name a field (text/hint):
+strings.xml -> add String -> Name <name_of_the_string> Value* <string_to_be_displayed>
+android:text="@string/<name_of_the_string>" 
+
+Log:
+    DEBUG: Log.d [Black]
+    ERROR: Log.e [Red]
+    INFO: Log.i [Black]
+    VERBOSE: Log.v [Black]
+    WARN: Log.w [Blue]
+Log.d("myTag", "This is my message");
+
+Comment Windows/linux :
+
+Line Comment hold both: Ctrl + /
+
+Block Comment hold all three: Ctrl + Shift + /
+
+Define Region:
+//region "{Name of the region}"
+//endregion
+
+Convert Int to String:
+String.valueOf(value);
+
+Convert String to Int:
+myNum = Integer.parseInt(myString);
+
+Reformat Code:
+Ctrl + Alt + L
+
+Add unimplemented method
+Press Alt+Insert inside your class
+
+Set Breakpoints Control+F8 
+Hit next breakpoint  F9
+Show Execution Point Alt + F10
+Step Over F8
+Step Into F7
+Force Step Into Alt + Shift + F7
+Step Out Shift + F8
+Run to Cursor Alt + F9
+Evaluate Expression Alt + F8
+
+Press Ctrl + Shift + A, and search for the command you're looking for ("declaration") 
+Declaration - Goto by Reference action - Ctrl + B or Ctrl + Click
+
+Log out of Fabric
+Ctrl+L
+
+Green indicates new files in the version control system, 
+Red indicates files that are not added to the VCS, 
+Blue indicates changed files since last commit, and 
+white indicates ignored files.
