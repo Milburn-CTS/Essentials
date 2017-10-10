@@ -154,3 +154,6 @@ Green indicates new files in the version control system,
 Red indicates files that are not added to the VCS, 
 Blue indicates changed files since last commit, and 
 white indicates ignored files.
+
+Quick Documentation:
+Ctrl. + Q 
